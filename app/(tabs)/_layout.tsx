@@ -1,12 +1,81 @@
 import { Tabs } from 'expo-router';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import Colors from '@/constants/Colors';
+import { StyleSheet } from 'react-native';
+import React from 'react';
 
 export default function TabLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="home" />
-      <Tabs.Screen name="event" />
-      <Tabs.Screen name="exStudent" />
-      <Tabs.Screen name="profile" />
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: Colors.main.SecondaryColor,
+        tabBarInactiveTintColor: Colors.light.Primary,
+        tabBarStyle: styles.tabBarStyle,
+        tabBarShowLabel: true, 
+        headerStyle: { backgroundColor: Colors.main.PrimaryColor },
+        headerTitleStyle: { color: Colors.light.Primary },
+        headerTitleAlign: 'center',
+      }}
+    >
+      <Tabs.Screen
+        name="home"
+        options={{
+          title:'Home',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" size={22} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="denunciation"
+        options={{
+          title:'Denuncia',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home" size={22} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="event"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="event-note" size={22} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="exStudent"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome5 name="user-graduate" size={20} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name="user" size={22} color={color} />
+          ),
+        }}
+      />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBarStyle: {
+    backgroundColor: Colors.main.PrimaryColor,
+    position: 'absolute', 
+    bottom: 16,
+    left: 16,
+    right: 16,
+    elevation: 4,
+    borderRadius: 30,
+    height: 60, 
+    paddingBottom: 10,
+  },
+});
