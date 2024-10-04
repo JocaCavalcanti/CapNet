@@ -2,7 +2,7 @@ import { View,  Image } from 'react-native';
 import React from 'react';
 import { useRouter } from 'expo-router';
 import { Button } from 'react-native-paper';
-
+import Colors from '../constants/Colors'
 export default function Index() {
   const router = useRouter();
 
@@ -16,6 +16,7 @@ export default function Index() {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: Colors.light.Primary,
       }}
     >
       <Image
@@ -25,7 +26,12 @@ export default function Index() {
           height: 300,
         }}
       />
-      <Button mode="contained" onPress={handleNavigate}>
+      <Button mode="contained" onPress={handleNavigate}
+      style={{
+        backgroundColor: Colors.main.PrimaryColor,
+        marginTop: '20%'
+      }}
+      >
     Press me
   </Button>
     </View>
