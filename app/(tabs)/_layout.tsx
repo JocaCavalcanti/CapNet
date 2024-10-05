@@ -25,40 +25,43 @@ export default function TabLayout() {
         options={{
           title:'Home',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={22} color={color} />
+            <Ionicons name="home" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="denunciation"
         options={{
-          title:'Denuncia',
+          title:'Denuncias',
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={22} color={color} />
+            <MaterialIcons name="error-outline" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="event"
         options={{
+          title:'Eventos',
           tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="event-note" size={22} color={color} />
+            <MaterialIcons name="event-note" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="exStudent"
         options={{
+          title:'Graduados',
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="user-graduate" size={20} color={color} />
+            <FontAwesome5 name="user-graduate" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
+          title:'Perfil',
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="user" size={22} color={color} />
+            <FontAwesome name="user" size={size} color={color} />
           ),
         }}
       />
