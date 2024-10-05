@@ -9,6 +9,7 @@ export default {
   },
   light:{
     Primary:'#FFFFFF',
-    Secondary:'#117AE5'
+    Secondary:'#117AE5',
+    Trr:'#f9f0d9'
   }
 };
