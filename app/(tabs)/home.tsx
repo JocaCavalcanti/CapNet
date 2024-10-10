@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image, Linking } from 'react-native';
+import { View, Text, Pressable, StyleSheet, Image, Linking } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Header, StackNavigationProp } from '@react-navigation/stack';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Colors from '@/constants/Colors';
-import HeaderLogo from '../../components/headerLogo'
+import HeaderLogo from '../../components/headerLogo';
 
 type RootStackParamList = {
   profile: any;
@@ -17,8 +17,12 @@ type RootStackParamList = {
 };
 
 const goToEventPage = () => {
-  Linking.openURL('https://eventos.unicap.br/eventos/')
-}
+  Linking.openURL('https://eventos.unicap.br/eventos/');
+};
+
+const goToPortalPage = () => {
+  Linking.openURL('https://portal2.unicap.br/RM/web/app/edu/PortalEducacional/login/');
+};
 
 type NavigationProp = StackNavigationProp<RootStackParamList>;
 
@@ -29,34 +33,39 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <HeaderLogo/>
+      <HeaderLogo />
 
       <View style={styles.grid}>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('profile')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('profile')}>
           <FontAwesome name="user" size={iconSize} color={iconColor} />
           <Text style={styles.buttonText}>Perfil</Text>
-        </TouchableOpacity>
+        </Pressable>
 
-        <TouchableOpacity style={styles.button} onPress={goToEventPage}>
+        <Pressable style={styles.button} onPress={goToEventPage}>
           <MaterialIcons name="event-note" size={iconSize} color={iconColor} />
           <Text style={styles.buttonText}>Eventos</Text>
-        </TouchableOpacity>
+        </Pressable>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('exStudent')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('exStudent')}>
           <FontAwesome5 name="user-graduate" size={iconSize} color={iconColor} />
           <Text style={styles.buttonText}>Ex Alunos</Text>
-        </TouchableOpacity>
+        </Pressable>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('denunciation')}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('denunciation')}>
           <MaterialIcons name="error-outline" size={iconSize} color={iconColor} />
           <Text style={styles.buttonText}>Denuncias</Text>
-        </TouchableOpacity>
+        </Pressable>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('settings')}>
+        <Pressable style={styles.button} onPress={goToPortalPage}>
+          <MaterialIcons name="school" size={iconSize} color={iconColor} />
+          <Text style={styles.buttonText}>Portal do Aluno</Text>
+        </Pressable>
+
+        <Pressable style={styles.button} onPress={goToPortalPage}>
           <MaterialIcons name="settings" size={iconSize} color={iconColor} />
           <Text style={styles.buttonText}>Outros</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
 
     </View>
@@ -81,7 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '80%',
     marginBottom: 20,
-    paddingTop: 30
+    paddingTop: 30,
   },
   button: {
     backgroundColor: '#fff',
@@ -95,11 +104,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 5,
     elevation: 5,
+    pointerEvents: 'auto',
   },
   buttonText: {
     fontSize: 16,
     color: '#8c1a1a',
     fontWeight: 'bold',
     marginTop: 5,
+    verticalAlign: 'middle',
+    textAlign: 'center'
   },
 });
