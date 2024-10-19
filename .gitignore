@@ -1,6 +1,8 @@
 node_modules/
 .expo/
 dist/
+sonar-token.properties
+.scannerwork/
 npm-debug.*
 *.jks
 *.p8

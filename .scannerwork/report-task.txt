@@ -2,5 +2,5 @@ projectKey=capnet2.0
 serverUrl=http://localhost:9000
 serverVersion=10.7.0.96327
 dashboardUrl=http://localhost:9000/dashboard?id=capnet2.0
-ceTaskId=657a8e31-3a57-45b8-8f08-19a26ae206e1
-ceTaskUrl=http://localhost:9000/api/ce/task?id=657a8e31-3a57-45b8-8f08-19a26ae206e1
+ceTaskId=d8da5eb6-f9f5-418c-936c-53dc94614487
+ceTaskUrl=http://localhost:9000/api/ce/task?id=d8da5eb6-f9f5-418c-936c-53dc94614487
