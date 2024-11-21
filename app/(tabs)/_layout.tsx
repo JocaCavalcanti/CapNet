@@ -39,9 +39,9 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="event"
+        name="notification"
         options={{
-          title:'Eventos',
+          title:'Notificaçoes',
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="event-note" size={size} color={color} />
           ),
