@@ -14,6 +14,7 @@ type RootStackParamList = {
   exStudent: any;
   denunciation: any;
   settings: any;
+  notification: any;
 };
 
 const goToEventPage = () => {
@@ -62,9 +63,9 @@ export default function Home() {
           <Text style={styles.buttonText}>Portal do Aluno</Text>
         </Pressable>
 
-        <Pressable style={styles.button} onPress={goToPortalPage}>
-          <MaterialIcons name="settings" size={iconSize} color={iconColor} />
-          <Text style={styles.buttonText}>Outros</Text>
+        <Pressable style={styles.button} onPress={() => navigation.navigate('notification')}>
+          <MaterialIcons name="notifications" size={iconSize} color={iconColor} />
+          <Text style={styles.buttonText}>Notificações</Text>
         </Pressable>
       </View>
 
