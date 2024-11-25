@@ -2,7 +2,7 @@
   "expo": {
     "name": "capnet2.0",
     "slug": "capnet2-0",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -17,6 +17,7 @@
       "bundleIdentifier": "com.jocx.capnet20"
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
