@@ -7,6 +7,7 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Colors from '@/constants/Colors';
 import HeaderLogo from '../../components/headerLogo';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 type RootStackParamList = {
   profile: any;
@@ -23,6 +24,9 @@ const goToEventPage = () => {
 
 const goToPortalPage = () => {
   Linking.openURL('https://portal2.unicap.br/RM/web/app/edu/PortalEducacional/login/');
+};
+const goToLibraryPage = () => {
+  Linking.openURL('https://portal.unicap.br/biblioteca');
 };
 
 type NavigationProp = StackNavigationProp<RootStackParamList>;
@@ -53,9 +57,9 @@ export default function Home() {
           <Text style={styles.buttonText}>Ex Alunos</Text>
         </Pressable>
 
-        <Pressable style={styles.button} onPress={() => navigation.navigate('denunciation')}>
-          <MaterialIcons name="error-outline" size={iconSize} color={iconColor} />
-          <Text style={styles.buttonText}>Denuncias</Text>
+        <Pressable style={styles.button} onPress={goToLibraryPage}>
+          <Ionicons name="library" size={iconSize} color={iconColor} />
+          <Text style={styles.buttonText}>Biblioteca</Text>
         </Pressable>
 
         <Pressable style={styles.button} onPress={goToPortalPage}>
