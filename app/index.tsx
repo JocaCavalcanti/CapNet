@@ -82,7 +82,7 @@ export default function Index() {
       }}
     >
       <Image
-        source={require('../assets/images/logoScreen.png')}
+        source={require('../assets/images/logoScreen.webp')}
         style={{
           width: '100%',
           height: 300,

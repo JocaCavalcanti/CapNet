@@ -5,7 +5,7 @@ export default function HeaderLogo() {
   return (
     <View>
       <Image 
-        source={require('../assets/images/layout_set_logo.png')}
+        source={require('../assets/images/layout_set_logo.webp')}
         style={styles.logo}
       />
     </View>

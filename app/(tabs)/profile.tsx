@@ -9,7 +9,7 @@ export default function Profile() {
       <HeaderLogo/>
 
       <ImageBackground
-        source={require('../../assets/images/image18.png')}
+        source={require('../../assets/images/image18.webp')}
         style={styles.backgroundImage}
       >
       </ImageBackground>
@@ -17,7 +17,7 @@ export default function Profile() {
       <View style={styles.cardContainer}>
         <View style={styles.imageContainer}>
           <Image
-            source={{ uri: '../../assets/images/user4.png' }}
+            source={{ uri: '../../assets/images/user4.webp' }}
             style={styles.profileImage}
           />
         </View>
