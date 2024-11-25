@@ -1,6 +1,8 @@
 node_modules/
 .expo/
 dist/
+capnet-cd13c-firebase-adminsdk-qgne8-ca2684dcf5.json
+google-services.json
 sonar-token.properties
 .scannerwork/
 npm-debug.*
