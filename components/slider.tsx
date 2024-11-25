@@ -6,13 +6,13 @@ import Colors from '../constants/Colors';
 const Slider = () => {
   const sliderData = [
     {
-      image: require('../assets/images/images20.png'), 
+      image: require('../assets/images/images20.webp'), 
     },
     {
-      image: require('../assets/images/images20.png'),
+      image: require('../assets/images/images20.webp'),
     },
     {
-      image: require('../assets/images/images20.png'),
+      image: require('../assets/images/images20.webp'),
     },
   ];
 
