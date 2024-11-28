@@ -14,15 +14,16 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.jocx.capnet20"
+      "bundleIdentifier": "com.unicap.capnet",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
-      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.jocx.capnet20"
+      "package": "com.jocx.capnet20",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",
@@ -30,7 +31,17 @@
       "favicon": "./assets/images/layout_set_logo.webp"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+				"expo-build-properties",
+				{
+					"ios": {
+						"useFrameworks": "static"
+					}
+				}
+			],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth"
     ],
     "experiments": {
       "typedRoutes": true

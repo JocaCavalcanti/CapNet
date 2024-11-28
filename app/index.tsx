@@ -1,10 +1,12 @@
-import { View,  Image, StyleSheet, Text, Alert } from 'react-native';
-import React, { useEffect } from 'react';
+import { View,  Image, StyleSheet, Text, Alert, KeyboardAvoidingView } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'expo-router';
-import { Button } from 'react-native-paper';
+import { ActivityIndicator, Button, TextInput } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
 import Colors from '../constants/Colors'
 import messaging, { getInitialNotification } from '@react-native-firebase/messaging'
+import auth from '@react-native-firebase/auth';
+import { FirebaseError } from 'firebase/app';
 
 export default function Index() {
   const requestUserPermission = async () => {
@@ -72,31 +74,91 @@ export default function Index() {
     router.push("/(tabs)/home");
   };
 
+  const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [loading, setLoading] = useState(false);
+
+	const signUp = async () => {
+		setLoading(true);
+		try {
+			await auth().createUserWithEmailAndPassword(email, password);
+			alert('Check your emails!');
+		} catch (e: any) {
+			const err = e as FirebaseError;
+			alert('Registration failed: ' + err.message);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	const signIn = async () => {
+		setLoading(true);
+		try {
+			await auth().signInWithEmailAndPassword(email, password);
+		} catch (e: any) {
+			const err = e as FirebaseError;
+			alert('Sign in failed: ' + err.message);
+		} finally {
+			setLoading(false);
+		}
+	};
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: Colors.light.Primary,
-      }}
-    >
-      <Image
-        source={require('../assets/images/logoScreen.webp')}
-        style={{
-          width: '100%',
-          height: 300,
-        }}
-      />
-      <Button mode="contained" onPress={handleNavigate}
-      style={{
-        backgroundColor: Colors.main.PrimaryColor,
-        marginTop: '20%'
-      }}
-      >
-    Press me
-  </Button>
-    </View>
+    <View style={styles.container}>
+      <Image style={styles.img} source={require('../assets/images/adaptive-icon.png')} />
+			<KeyboardAvoidingView behavior="padding">
+				<TextInput
+					style={styles.input}
+					value={email}
+					onChangeText={setEmail}
+					autoCapitalize="none"
+					keyboardType="email-address"
+					placeholder="Email"
+				/>
+				<TextInput
+					style={styles.input}
+					value={password}
+					onChangeText={setPassword}
+					secureTextEntry
+					placeholder="Password"
+				/>
+				{loading ? (
+					<ActivityIndicator size={'small'} style={{ margin: 28 }} />
+				) : (
+					<>
+						<Button style={styles.btn_login} labelStyle={{ color: '#fff' }} accessibilityLabel="Botão de Login" onPress={signIn} >ACESSAR</Button>
+						<Button onPress={signUp} accessibilityLabel="Botão de Criar Conta" >Criar Conta</Button>
+					</>
+				)}
+			</KeyboardAvoidingView>
+		</View>
   );
 }
 
+const styles = StyleSheet.create({
+	container: {
+		paddingHorizontal: 20,
+		flex: 1,
+		justifyContent: 'space-evenly',
+    alignItems: 'center',
+    backgroundColor: '#f9f0d9'
+	},
+  img: {
+    height: 200,
+    width: 200
+  },
+	input: {
+		marginVertical: 4,
+		height: 50,
+		borderWidth: 1,
+		borderRadius: 4,
+		padding: 10,
+		backgroundColor: '#fff'
+	},
+  btn_login: {
+    padding: 10,
+    backgroundColor: '#8c1a1a',
+    marginVertical: 10,
+    borderRadius: 4
+  }
+});

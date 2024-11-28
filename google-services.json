@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "803270494121",
+    "project_id": "capnet-cd13c",
+    "storage_bucket": "capnet-cd13c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803270494121:android:b331c7fa82e9e5d17c66b8",
+        "android_client_info": {
+          "package_name": "com.jocx.capnet20"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803270494121-8nq0iu49kai2nl1rlbkobba7dr8phrtd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jocx.capnet20",
+            "certificate_hash": "35c25bc6ba63619e5021f5e982c0ecf1903d5db3"
+          }
+        },
+        {
+          "client_id": "803270494121-oss67702pt92ccbpk49sskn25gf3rfng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jocx.capnet20",
+            "certificate_hash": "e9328d02229efd1b1cf220146a9ecab80e4ce81a"
+          }
+        },
+        {
+          "client_id": "803270494121-mi8pcc9k2aqhud2tb7pbb6o0jieai5fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrMXt14H5HrL9LmQ9ZErigHc2dIhTjF3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803270494121-mi8pcc9k2aqhud2tb7pbb6o0jieai5fv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "803270494121-mul2m0t4997l68p8pfqdv36dqohn441d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unicap.capnet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

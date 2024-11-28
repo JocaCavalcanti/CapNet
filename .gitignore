@@ -11,6 +11,9 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+android/
+.env
+capnet-cd13c-firebase-adminsdk-qgne8-ca2684dcf5.json
 
 # macOS
 .DS_Store
