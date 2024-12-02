@@ -93,13 +93,10 @@ export default function ExStudents() {
               style={styles.circle}
               onPress={() => Linking.openURL(linkItem.link)}
             >
-              {linkItem.type === 'lattes' ? (
-                <Image
-                  source={require('../../assets/images/lattes.svg')}
-                  style={{ width: 30, height: 30, tintColor: Colors.light.Trr }}
-                />
+              {linkItem.type === 'linkedin' ? (
+                <Icon name="linkedin" size={30} color={Colors.light.Trr} />
               ) : (
-                <Icon name={linkItem.type === 'linkedin' ? 'linkedin' : 'book'} size={30} color={Colors.light.Trr} />
+                <Icon name="book" size={30} color={Colors.light.Trr} />
               )}
             </TouchableOpacity>
 

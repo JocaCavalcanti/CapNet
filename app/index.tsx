@@ -92,21 +92,22 @@ export default function Index() {
 	};
 
 	const signIn = async () => {
-		setLoading(true);
-		try {
-			await auth().signInWithEmailAndPassword(email, password);
-		} catch (e: any) {
-			const err = e as FirebaseError;
-			alert('Sign in failed: ' + err.message);
-		} finally {
-			setLoading(false);
-		}
-	};
+    setLoading(true);
+    try {
+      await auth().signInWithEmailAndPassword(email, password);
+      router.push("/(tabs)/home");
+    } catch (e: any) {
+      const err = e as FirebaseError;
+      alert('Sign in failed: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={require('../assets/images/adaptive-icon.png')} />
-			<KeyboardAvoidingView behavior="padding">
+			<KeyboardAvoidingView behavior="padding" style={styles.keyB}>
 				<TextInput
 					style={styles.input}
 					value={email}
@@ -138,25 +139,37 @@ export default function Index() {
 const styles = StyleSheet.create({
 	container: {
 		paddingHorizontal: 20,
-		flex: 1,
-		justifyContent: 'space-evenly',
+		paddingTop:'50%',
+		justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#f9f0d9'
+    backgroundColor: '#f9f0d9',
+    gap: 40
+
 	},
+  keyB:{
+    height: '100%',
+    width: '100%',
+  },
   img: {
     height: 200,
-    width: 200
+    width: 200,
   },
 	input: {
 		marginVertical: 4,
 		height: 50,
+    maxHeight: 50,
 		borderWidth: 1,
 		borderRadius: 4,
 		padding: 10,
-		backgroundColor: '#fff'
+		backgroundColor: '#fff',
+    textAlign: 'left',
+    
 	},
   btn_login: {
     padding: 10,
+    maxHeight: 50,
     backgroundColor: '#8c1a1a',
     marginVertical: 10,
     borderRadius: 4
